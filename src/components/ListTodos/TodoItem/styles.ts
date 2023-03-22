@@ -19,14 +19,8 @@ export const Container = styled('li', {
     marginBottom: '1rem',
   },
 
-  '> span, button': {
+  '> span': {
     display: 'flex',
     gap: '1rem',
-    color: '$purple500',
-    transition: 'all 0.35s',
-
-    '&:hover': {
-      color: '#3E1671',
-    },
   },
 })

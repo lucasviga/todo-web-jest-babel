@@ -33,12 +33,21 @@ describe('TodoItem Component', () => {
     expect(screen.getByText(/react js/i)).toHaveClass('todo-done')
   })
 
-  it('should not show button actions if it is marked as done', async () => {
-    const doneBtn = screen.queryByTestId('done')
-    const removeBtn = screen.queryByTestId('remove')
+  it('should show undo button if it is marked as done', async () => {
+    expect(screen.getByTestId('undo')).toBeInTheDocument()
+  })
 
-    expect(doneBtn).not.toBeInTheDocument()
-    expect(removeBtn).not.toBeInTheDocument()
+  it('should be able to undo a task as done', async () => {
+    const { rerender } = renderUtils
+
+    const undoBtn = screen.getByTestId('undo')
+    await userEvent.click(undoBtn)
+
+    expect(todoStore.result.current.todos[0].isDone).toBeFalsy()
+
+    rerender(<TodoItem todo={{ ...mockTodo, isDone: false }} />)
+
+    expect(screen.getAllByRole('button')).toHaveLength(2)
   })
 
   it('should be able to delete a todo', async () => {

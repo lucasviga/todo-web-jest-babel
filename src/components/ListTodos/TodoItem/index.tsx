@@ -1,5 +1,6 @@
-import { Check, TrashSimple } from 'phosphor-react'
+import { Check, TrashSimple, ArrowUUpLeft } from 'phosphor-react'
 import { useStore } from '../../../store/todos'
+import { Button } from '../../Button'
 import { Container } from './styles'
 
 interface Todo {
@@ -18,22 +19,27 @@ export function TodoItem({ todo }: TodoItemProps) {
     <Container key={todo.title} className={todo.isDone ? 'todo-done' : ''}>
       {todo.title}
 
-      {!todo.isDone && (
+      {todo.isDone ? (
         <span>
-          <button
-            type="button"
+          <Button
+            data-testid="undo"
+            onClick={() => onConcludeTodo(todo)}
+            icon={<ArrowUUpLeft size={22} />}
+          />
+        </span>
+      ) : (
+        <span>
+          <Button
             data-testid="done"
             onClick={() => onConcludeTodo(todo)}
-          >
-            <Check size={22} />
-          </button>
-          <button
-            type="button"
+            icon={<Check size={22} />}
+          />
+
+          <Button
             data-testid="remove"
             onClick={() => onRemoveTodo(todo)}
-          >
-            <TrashSimple size={22} />
-          </button>
+            icon={<TrashSimple size={22} />}
+          />
         </span>
       )}
     </Container>
