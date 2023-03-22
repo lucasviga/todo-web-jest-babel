@@ -5,10 +5,12 @@ I decided to create this app to practice Unit Tests fundamentals. Todo App, I ca
 
 First of all, I choose Jest and Babel to start this project and get experience how to setup both libraries.
 
-## State Management
+You can see a demo here: https://gorgeous-madeleine-d0d9f9.netlify.app/
+
+### State Management
 As I was practing unit tests, I took oportunity and choose Zustand to manage state to see how it works.
 
-## 🧪 Unit Tests
+### 🧪 Unit Tests
 
 #### CreateTodo Component
 - should create a new todo
