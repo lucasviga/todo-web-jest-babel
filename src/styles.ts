@@ -20,4 +20,8 @@ export const Content = styled('div', {
     marginBottom: '0.6rem',
     fontWeight: '400',
   },
+
+  '@media(max-width: 600px)': {
+    margin: '0 1rem',
+  },
 })

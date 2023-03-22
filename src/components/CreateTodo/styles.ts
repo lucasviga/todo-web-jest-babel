@@ -38,4 +38,8 @@ export const CreateTodoBtn = styled('button', {
   '&:hover': {
     background: '#3E1671',
   },
+
+  '@media(max-width: 600px)': {
+    width: '15%',
+  },
 })
