@@ -21,8 +21,10 @@ As I was practing unit tests, I took oportunity and choose Zustand to manage sta
 - should not show button actions if it is marked as done
 - should be able to delete a todo
 
-## Libraries used in project
+### Libraries used in project
 - zustand
 - phosphor icons
 - stitches
 - jest and babel packages
+
+This project is hosted: Netlify
